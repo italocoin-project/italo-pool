@@ -91,11 +91,11 @@
 
 -->
 
-<!-- IPBC Paper Wallet Generator -->
+<!-- FreeHaven Paper Wallet Generator -->
 <div class="row">
 	<h3><span tkey="paperWallet">Paper Wallet Generator</span></h3>
 	<div class="card padding-15 padding-b-10" tkey="paperWalletDesc">
-		This page generates a new IPBC wallet address that can be imported into the GUI/CLI wallet.<br>
+		This page generates a new FreeHaven wallet address that can be imported into the GUI/CLI wallet.<br>
 		Be sure to keep a record of this page in a safe place before mining to this wallet address!
 	</div>
 	
@@ -2006,12 +2006,12 @@ return{_strlen:lb,_ge_mul8:Va,_keccak:db,_ge_scalarmult:Ta,_ge_fromfe_frombytes_
 
 
 
-var ipbcConfig = {
-    coinUnitPlaces: 8,
-    coinSymbol: 'IPBC',
-    coinName: 'Interplanetary Bittube Coin',
-    coinUriPrefix: 'ipbc:',
-    addressPrefix: 209
+var xfhConfig = {
+    coinUnitPlaces: 12,
+    coinSymbol: 'XFH',
+    coinName: 'FreeHaven',
+    coinUriPrefix: 'xfh:',
+    addressPrefix: 10343
 };
 var cnUtilGen = function(initConfig) {
     //var config = $.extend({}, initConfig);
@@ -2435,7 +2435,7 @@ var cnUtilGen = function(initConfig) {
 
     return this;
 };
-var cnUtil = cnUtilGen(ipbcConfig);
+var cnUtil = cnUtilGen(xfhConfig);
 /*
  mnemonic.js : Converts between 4-byte aligned strings and a human-readable
  sequence of words. Uses 1626 common words taken from wikipedia article:

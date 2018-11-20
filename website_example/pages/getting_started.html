@@ -4,7 +4,7 @@
         <h3><span tkey="connectionDetails">Connection Details</span></h3>
         <div class="card padding-l-10 padding-r-10">
             <div class="stats">
-                <div><i class="fa fa-cloud"></i> <span tkey="miningPoolHost">Mining Pool Address</span>: <span id="miningPoolHost"></span></div>
+                <div><i class="fa fa-cloud"></i> <span tkey="miningPoolHost">Mining Pool Address</span>: <i class="fas fa-globe-americas"></i>&nbsp;<span id="miningPoolHost"></span></div>
                 <div><i class="fa fa-cubes"></i> <span tkey="cnAlgorithm">Algorithm</span>: <span id="cnAlgorithm"></span></div>
                 <div><i class="fa fa-code-branch"></i> <span>XMR-Node-Proxy: </span><span>Supported</span></div>
             </div>
@@ -115,10 +115,10 @@
 	    
 	    <!-- XMR-Stak -->
             <tr class="appInfo">
-                <td class="miningAppTitle">XMR-Stak</td>
+                <td class="miningAppTitle">XMR-Stak-FreeHaven</td>
                 <td>CPU & GPU (AMD/NVIDIA)</td>
                 <td>Easy to use CPU + GPU Mining App</td>
-                <td><a class="btn btn-success" target="_blank" href="https://github.com/fireice-uk/xmr-stak/releases/latest"><span tkey="download">Download</span></a></td>
+                <td><a class="btn btn-success" target="_blank" href="https://github.com/killmak/xmr-stak/releases/latest"><span tkey="download">Download</span></a></td>
                 <td><a class="btn btn-default" role="button" data-toggle="collapse" href="#xmrstak" aria-expanded="true" aria-controls="collapseExample"><span tkey="showConfig">See more</span></a></td>
             </tr>
             <tr class="appConfig">
@@ -137,12 +137,41 @@
         "pool_weight": 1
     },
 ],
-"currency": "bittube",</pre>
+"currency": "freehaven",</pre>
 
                     </div>
                 </td>
             </tr>
-	    <!-- XMRig-AMD -->
+        <!-- XMRigCC -->
+            <tr class="appInfo">
+                <td class="miningAppTitle">XMRigCC</td>
+                <td>CPU</td>
+                <td>CPU Miner with Command&Control (CC) Server and Monitoring</td>
+                <td><a class="btn btn-success" target="_blank" href="https://github.com/Bendr0id/xmrigCC/releases/latest"><span tkey="download">Download</span></a></td>
+                <td><a class="btn btn-default" role="button" data-toggle="collapse" href="#xmrigcc" aria-expanded="true" aria-controls="collapseExample"><span tkey="showConfig">See more</span></a></td>
+            </tr>
+            <tr class="appConfig">
+                <td colspan="5">
+                    <div class="collapse" id="xmrigcc">
+		
+<pre>"algo": "cryptonight",
+"pow-variant" : "xfh",
+"pools": [
+	{
+		"url": "<span class="exampleHost">POOL_HOST</span>:<span class="examplePort">PORT</span>",
+		"user": "<span class="exampleLogin">YOUR_WALLET_ADDRESS</span>",
+		"pass": "<span class="examplePassword">YOUR_WORKER_NAME</span>",
+		"keepalive": true,
+		"nicehash": false
+	}
+],</pre>
+
+                    </div>
+                </td>
+            </tr>
+
+			
+			<!--	    <!-- XMRig-AMD --
             <tr class="appInfo">
                 <td class="miningAppTitle">XMRig-AMD</td>
                 <td>OpenCL (AMD)</td>
@@ -169,35 +198,8 @@
                     </div>
                 </td>
             </tr>	    
-	    <!-- XMRigCC -->
-            <tr class="appInfo">
-                <td class="miningAppTitle">XMRigCC</td>
-                <td>CPU</td>
-                <td>CPU Miner with Command&Control (CC) Server and Monitoring</td>
-                <td><a class="btn btn-success" target="_blank" href="https://github.com/Bendr0id/xmrigCC/releases/latest"><span tkey="download">Download</span></a></td>
-                <td><a class="btn btn-default" role="button" data-toggle="collapse" href="#xmrigcc" aria-expanded="true" aria-controls="collapseExample"><span tkey="showConfig">See more</span></a></td>
-            </tr>
-            <tr class="appConfig">
-                <td colspan="5">
-                    <div class="collapse" id="xmrigcc">
-		
-<pre>"algo": "cryptonight-heavy",
-"pow-variant" : "ipbc",
-"pools": [
-	{
-		"url": "<span class="exampleHost">POOL_HOST</span>:<span class="examplePort">PORT</span>",
-		"user": "<span class="exampleLogin">YOUR_WALLET_ADDRESS</span>",
-		"pass": "<span class="examplePassword">YOUR_WORKER_NAME</span>",
-		"keepalive": true,
-		"nicehash": false
-	}
-],</pre>
 
-                    </div>
-                </td>
-            </tr>
-
-	    <!-- XMRigCC-amd -->
+	    <!-- XMRigCC-amd --
             <tr class="appInfo">
                 <td class="miningAppTitle">XMRigCC-amd</td>
                 <td>OpenCL (AMD)</td>
@@ -225,7 +227,7 @@
                 </td>
             </tr>
 
-	    <!-- Cast XMR -->
+	    <!-- Cast XMR --
             <tr class="appInfo">
                 <td class="miningAppTitle">Cast XMR</td>
                 <td>OpenCL (AMD)</td>
@@ -243,7 +245,7 @@
                 </td>
             </tr>
 
-	    <!-- SRBMiner -->
+	    <!-- SRBMiner --
             <tr class="appInfo">
                 <td class="miningAppTitle">SRBMiner</td>
                 <td>OpenCL (AMD)</td>
@@ -266,7 +268,7 @@
                     </div>
                 </td>
             </tr>
-	    
+-->	    
             </tbody>
         </table>
     </div>
@@ -320,10 +322,10 @@ currentPage = {
         algorithm = '';
         xmrstakAlgo = '';
 
-        if (cnAlgorithm == "bittube")
+        if (cnAlgorithm == "freehaven")
         {
-            algorithm = 'Cryptonight Saber (AKA Cryptonight Heavy-Tube)';
-            xmrstakAlgo = 'bittube';
+            algorithm = 'Cryptonight-FreeHaven (AKA CN-Superfast-NotHeavy-Haven)';
+            xmrstakAlgo = 'freehaven';
         }
         else if (cnAlgorithm == "cryptonight_light") {
             if (cnVariant === 1) {
