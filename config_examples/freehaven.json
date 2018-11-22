@@ -103,7 +103,7 @@
             "penalty": 30
         },
         "banning": {
-            "enabled": true,
+            "enabled": false,
             "time": 600,
             "invalidPercent": 25,
             "checkThreshold": 30
