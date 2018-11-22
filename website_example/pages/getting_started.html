@@ -147,7 +147,7 @@
             <tr class="appInfo">
                 <td class="miningAppTitle">XMRigCC</td>
                 <td>CPU</td>
-                <td>CPU Miner with Command&Control (CC) Server and Monitoring</td>
+                <td>CPU Miner with Command&Control (CC) Server for monitoring and managing your farms & rigs</td>
                 <td><a class="btn btn-success" target="_blank" href="https://github.com/Bendr0id/xmrigCC/releases/latest"><span tkey="download">Download</span></a></td>
                 <td><a class="btn btn-default" role="button" data-toggle="collapse" href="#xmrigcc" aria-expanded="true" aria-controls="collapseExample"><span tkey="showConfig">See more</span></a></td>
             </tr>
@@ -171,40 +171,11 @@
                 </td>
             </tr>
 
-			
-			<!--	    <!-- XMRig-AMD --
-            <tr class="appInfo">
-                <td class="miningAppTitle">XMRig-AMD</td>
-                <td>OpenCL (AMD)</td>
-                <td>Ligthweight but powerful GPU Mining App</td>
-                <td><a class="btn btn-success" target="_blank" href="https://github.com/xmrig/xmrig-amd/releases/latest"><span tkey="download">Download</span></a></td>
-                <td><a class="btn btn-default" role="button" data-toggle="collapse" href="#xmrigAMD" aria-expanded="true" aria-controls="collapseExample"><span tkey="showConfig">See more</span></a></td>
-            </tr>
-            <tr class="appConfig">
-                <td colspan="5">
-                    <div class="collapse" id="xmrigAMD">
-		
-<pre>"algo": "cryptonight-heavy",
-"pools": [
-	{
-		"url": "<span class="exampleHost">POOL_HOST</span>:<span class="examplePort">PORT</span>",
-		"user": "<span class="exampleLogin">YOUR_WALLET_ADDRESS</span>",
-		"pass": "<span class="examplePassword">YOUR_WORKER_NAME</span>",
-		"keepalive": true,
-		"nicehash": false
-		"variant" : "tube",
-	}
-],</pre>
-
-                    </div>
-                </td>
-            </tr>	    
-
-	    <!-- XMRigCC-amd --
+	    <!-- XMRigCC-amd --->
             <tr class="appInfo">
                 <td class="miningAppTitle">XMRigCC-amd</td>
                 <td>OpenCL (AMD)</td>
-                <td>GPU Miner with Command&Control (CC) Server and Monitoring</td>
+                <td>GPU Miner with Command&Control (CC) Server for monitoring and managing your farms & rigs</td>
                 <td><a class="btn btn-success" target="_blank" href="https://github.com/Bendr0id/xmrigCC-amd/releases/latest"><span tkey="download">Download</span></a></td>
                 <td><a class="btn btn-default" role="button" data-toggle="collapse" href="#xmrigccamd" aria-expanded="true" aria-controls="collapseExample"><span tkey="showConfig">See more</span></a></td>
             </tr>
@@ -212,13 +183,13 @@
                 <td colspan="5">
                     <div class="collapse" id="xmrigccamd">
 		
-<pre>"algo": "cryptonight-heavy",
-"pow-variant" : "ipbc",
+<pre>"algo": "cryptonight",
 "pools": [
 	{
 		"url": "<span class="exampleHost">POOL_HOST</span>:<span class="examplePort">PORT</span>",
 		"user": "<span class="exampleLogin">YOUR_WALLET_ADDRESS</span>",
 		"pass": "<span class="examplePassword">YOUR_WORKER_NAME</span>",
+		"pow-variant" : "xfh",
 		"keepalive": true,
 		"nicehash": false
 	}
@@ -227,50 +198,7 @@
                     </div>
                 </td>
             </tr>
-
-	    <!-- Cast XMR --
-            <tr class="appInfo">
-                <td class="miningAppTitle">Cast XMR</td>
-                <td>OpenCL (AMD)</td>
-                <td>Optimized for Vega and Polaris based GPUs</td>
-                <td><a class="btn btn-success" target="_blank" href="http://www.gandalph3000.com/"><span tkey="download">Download</span></a></td>
-                <td><a class="btn btn-default" role="button" data-toggle="collapse" href="#castxmr" aria-expanded="true" aria-controls="collapseExample"><span tkey="showConfig">See more</span></a></td>
-            </tr>
-            <tr class="appConfig">
-                <td colspan="5">
-                    <div class="collapse" id="castxmr">
-		
-<pre>cast_xmr -S <span class="exampleHost">POOL_HOST</span>:<span class="examplePort">PORT</span> -u <span class="exampleLogin">YOUR_WALLET_ADDRESS</span> -p <span class="examplePassword">YOUR_WORKER_NAME</span> --algo=5</pre>
-
-                    </div>
-                </td>
-            </tr>
-
-	    <!-- SRBMiner --
-            <tr class="appInfo">
-                <td class="miningAppTitle">SRBMiner</td>
-                <td>OpenCL (AMD)</td>
-                <td>Cryptonight AMD GPU Miner</td>
-                <td><a class="btn btn-success" target="_blank" href="http://www.srbminer.com/download.html"><span tkey="download">Download</span></a></td>
-                <td><a class="btn btn-default" role="button" data-toggle="collapse" href="#srbminer" aria-expanded="true" aria-controls="collapseExample"><span tkey="showConfig">See more</span></a></td>
-            </tr>
-            <tr class="appConfig">
-                <td colspan="5">
-                    <div class="collapse" id="srbminer">
-		
-<pre>"cryptonight_type" : "bittubev2",
-{"pool" : "<span class="exampleHost">POOL_HOST</span>:<span class="examplePort">PORT</span>", "wallet" : "<span class="exampleLogin">YOUR_WALLET_ADDRESS</span>", "password" : "<span class="examplePassword">YOUR_WORKER_NAME</span>"},
-</pre>
-
-                    </div>
-                </td>
-            </tr>
-
-                    </div>
-                </td>
-            </tr>
--->	    
-            </tbody>
+		</tbody>
         </table>
     </div>
 </div>
@@ -325,7 +253,7 @@ currentPage = {
 
         if (cnAlgorithm == "freehaven")
         {
-            algorithm = 'Cryptonight-Swap (AKA CN-FreeHaven)';
+            algorithm = 'Cryptonight-FreeHaven (AKA CN-Swap)';
             xmrstakAlgo = 'freehaven';
         }
         else if (cnAlgorithm == "cryptonight_light") {
