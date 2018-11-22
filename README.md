@@ -1,7 +1,7 @@
-cryptonote-ipbc-pool
+cryptonote-freehaven-pool
 ======================
 
-High performance Node.js (with native C addons) mining pool for IPBC.
+High performance Node.js (with native C addons) mining pool for FreeHaven.
 
 
 #### Table of Contents
@@ -94,13 +94,9 @@ Features
 Community / Support
 ===
 
-* [GitHub Wiki](https://github.com/IPBCrocks/cryptonote-ipbc-pool/wiki)
-* [GitHub Issues](https://github.com/IPBCrocks/cryptonote-ipbc-pool/issues)
-* [Discord Group](https://discord.gg/g7cZmJ9)
-
-#### Pools Using This Software
-
-* https://mining.ipbc.rocks
+* [GitHub Wiki](https://github.com/LPHuynh/cryptonote-freehaven-pool/wiki)
+* [GitHub Issues](https://github.com/LPHuynh/cryptonote-freehaven-pool/issues)
+* [Discord Group](https://discord.gg/zbq4vvq)
 
 Usage
 ===
@@ -149,7 +145,7 @@ sudo su - your-user
 Clone the repository and run `npm update` for all the dependencies to be installed:
 
 ```bash
-git clone https://github.com/IPBCrocks/cryptonote-ipbc-pool.git pool
+git clone https://github.com/LPHuynh/cryptonote-freehaven-pool.git pool
 cd pool
 
 npm update
