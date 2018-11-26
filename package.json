@@ -1,11 +1,11 @@
 {
-    "name": "cryptonote-ipbc-pool",
+    "name": "cryptonote-freehaven-pool",
     "version": "1.3.5",
     "license": "GPL-2.0",
     "author": "IPBC.rocks",
     "repository": {
         "type": "git",
-        "url": "https://github.com/IPBCrocks/cryptonote-ipbc-pool.git"
+        "url": "https://github.com/LPHuynh/cryptonote-freehaven-pool.git"
     },
     "dependencies": {
         "async": "1",
@@ -14,7 +14,6 @@
         "cli-color": "*",
         "cryptoforknote-util": "git://github.com/MoneroOcean/node-cryptoforknote-util.git",
         "cryptonight-hashing": "git://github.com/freehavenprotocol/node-cryptonight-hashing.git",
-        "multi-hashing": "git+https://github.com/freehavenprotocol/node-multi-hashing.git",
         "dateformat": "*",
         "mailgun.js": "*",
         "node-telegram-bot-api": "*",
