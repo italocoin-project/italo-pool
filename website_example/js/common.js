@@ -226,7 +226,7 @@ function getReadableCoins(coins, digits, withoutSymbol){
     return amount.toString() + (withoutSymbol ? '' : (' ' + lastStats.config.symbol));
 }
 
-// Get readable coins with fixed decimal place (no scientific notation or truncated decimals)
+// Get readable coins with fixed decimal places (no scientific notation or truncated decimals)
 function getReadableCoinsFixedDecimal(coins, digits, withoutSymbol){
     var coinDecimalPlaces = getCoinDecimalPlaces();
     var amount = parseFloat((parseInt(coins || 0) / lastStats.config.coinUnits));
@@ -246,10 +246,7 @@ function formatDifficulty(x) {
 // Format luck / current effort
 function formatLuck(difficulty, shares) {
     var percent = Math.round(shares / difficulty * 100);
-    if(!percent){
-        return '<span class="luckGood">?</span>';
-    }
-    else if(percent <= 100){
+    if(percent <= 100){
         return '<span class="luckGood">' + percent + '%</span>';
     }
     else if(percent >= 101 && percent <= 150){
