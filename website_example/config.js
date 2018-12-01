@@ -1,6 +1,6 @@
 var api = "https://freehaven.example.com:8119";
 
-var coinDecimalPlaces = 3;
+var coinDecimalPlaces = 8;
 
 var email = "";
 var telegram = "";
@@ -11,6 +11,6 @@ var marketCurrencies = ["{symbol}-BTC"];
 var blockchainExplorer = "https://freehaven.coinscope.cc/block/{id}";
 var transactionExplorer = "https://freehaven.coinscope.cc/tx/{id}";
 
-var themeCss = "themes/freehaven.css";
-var themeCssDark = "themes/freehaven_dark.css";
+var themeCss = "themes/moon_gray.css";
+var themeCssDark = "themes/moon_gray_dark.css";
 var defaultLang = 'en';

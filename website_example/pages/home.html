@@ -236,9 +236,9 @@ currentPage = {
 
         if (lastStats.config.networkFee) {
             var networkFeePercent = lastStats.config.networkFee / 100;
-            updateText('networkLastReward', getReadableCoins(lastStats.lastblock.reward - (lastStats.lastblock.reward * networkFeePercent)));
+            updateText('networkLastReward', getReadableCoinsFixedDecimal(lastStats.lastblock.reward - (lastStats.lastblock.reward * networkFeePercent)));
         } else {
-            updateText('networkLastReward', getReadableCoins(lastStats.lastblock.reward));
+            updateText('networkLastReward', getReadableCoinsFixedDecimal(lastStats.lastblock.reward));
         }
 
         updateText('poolHashrate', getReadableHashRateString(lastStats.pool.hashrate) + '/sec');
