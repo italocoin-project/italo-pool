@@ -172,8 +172,8 @@ function fetchAddressStats(longpoll){
                 $('#minerAvgHR').hide();
             }
             updateText('yourHashes', (data.stats.hashes || 0).toString());
-            updateText('yourPaid', getReadableCoins(data.stats.paid));
-            updateText('yourPendingBalance', getReadableCoins(data.stats.balance));
+            updateText('yourPaid', getReadableCoinsFixedDecimal(data.stats.paid));
+            updateText('yourPendingBalance', getReadableCoinsFixedDecimal(data.stats.balance));
 
             var userRoundHashes = parseInt(data.stats.roundHashes || 0);
             var poolRoundHashes = parseInt(lastStats.pool.roundHashes || 0);
@@ -202,7 +202,7 @@ function fetchAddressStats(longpoll){
             var payoutEstimate = Math.round(lastReward * (score_pct / 100));
             if (transferFee) payoutEstimate = payoutEstimate - transferFee;
 	    if (payoutEstimate < 0) payoutEstimate = 0;
-	    updateText('yourPayoutEstimate', getReadableCoins(payoutEstimate));
+	    updateText('yourPayoutEstimate', getReadableCoinsFixedDecimal(payoutEstimate));
 	    
             renderPayments(data.payments);
 	    
@@ -362,7 +362,7 @@ function createCharts() {
                                 var dataType = data.datasets[tooltipItem.datasetIndex].dataType || '';
                                 var label = tooltipItem.yLabel;
                                 if (dataType == 'hashrate') label = getReadableHashRateString(tooltipItem.yLabel)+'/sec';
-                                else if (dataType == 'payments') label = getReadableCoins(tooltipItem.yLabel);
+                                else if (dataType == 'payments') label = getReadableCoinsFixedDecimal(tooltipItem.yLabel);
                                 return ' ' + label;
                             }
                         }
@@ -512,7 +512,7 @@ function getPaymentRowElement(payment, jsonString){
 function getPaymentCells(payment){
     return '<td class="col1">' + formatDate(payment.time) + '</td>' +
            '<td class="col2">' + formatPaymentLink(payment.hash) + '</td>' +
-           '<td class="col3">' + getReadableCoins(payment.amount) + '</td>' +
+           '<td class="col3">' + getReadableCoinsFixedDecimal(payment.amount) + '</td>' +
            '<td class="col4">' + payment.mixin + '</td>';
 }
 

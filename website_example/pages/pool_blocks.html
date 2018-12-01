@@ -246,7 +246,7 @@ function getBlockRowElement(block, jsonString){
         reward = "Waiting...";
     }
     else{
-        reward = getReadableCoins(block.reward, null, true);
+        reward = getReadableCoinsFixedDecimal(block.reward, null, true);
     }
     
     var columns =

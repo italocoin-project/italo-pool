@@ -836,7 +836,8 @@ table th.sort:hover{
     text-overflow: ellipsis;
   }  
   #workerPayments table .col3 {
-    width:130px;
+    text-align: right;
+    width:180px;
   }  
   #workerPayments table .col4 {
     width: 70px;
@@ -955,7 +956,8 @@ table th.sort:hover{
     text-overflow: ellipsis;
   }  
   #paymentsReport table .col3 {
-    width:130px;
+    text-align: right;
+    width:180px;
   }  
   #paymentsReport table .col4 {
     width:110px;

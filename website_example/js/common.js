@@ -226,6 +226,13 @@ function getReadableCoins(coins, digits, withoutSymbol){
     return amount.toString() + (withoutSymbol ? '' : (' ' + lastStats.config.symbol));
 }
 
+// Get readable coins with fixed decimal place (no scientific notation or truncated decimals)
+function getReadableCoinsFixedDecimal(coins, digits, withoutSymbol){
+    var coinDecimalPlaces = getCoinDecimalPlaces();
+    var amount = parseFloat((parseInt(coins || 0) / lastStats.config.coinUnits));
+    return amount.toFixed(digits || coinDecimalPlaces).toString() + (withoutSymbol ? '' : (' ' + lastStats.config.symbol));
+}
+
 // Format payment link
 function formatPaymentLink(hash){
     return '<a target="_blank" href="' + getTransactionUrl(hash) + '">' + hash + '</a>';
