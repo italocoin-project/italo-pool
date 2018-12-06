@@ -1,7 +1,7 @@
-cryptonote-freehaven-pool
+cryptonote-swap-pool
 ======================
 
-High performance Node.js (with native C addons) mining pool for FreeHaven.
+High performance Node.js (with native C addons) mining pool for swap.
 
 
 #### Table of Contents
@@ -94,9 +94,9 @@ Features
 Community / Support
 ===
 
-* [GitHub Wiki](https://github.com/LPHuynh/cryptonote-freehaven-pool/wiki)
-* [GitHub Issues](https://github.com/LPHuynh/cryptonote-freehaven-pool/issues)
-* [Discord Group](https://discord.gg/zbq4vvq)
+* [GitHub Wiki](https://github.com/LPHuynh/cryptonote-swap-pool/wiki)
+* [GitHub Issues](https://github.com/LPHuynh/cryptonote-swap-pool/issues)
+* [Discord Group](https://discord.gg/XAmdwSd)
 
 Usage
 ===
@@ -145,7 +145,7 @@ sudo su - your-user
 Clone the repository and run `npm update` for all the dependencies to be installed:
 
 ```bash
-git clone https://github.com/LPHuynh/cryptonote-freehaven-pool.git pool
+git clone https://github.com/LPHuynh/cryptonote-swap-pool.git pool
 cd pool
 
 npm update
