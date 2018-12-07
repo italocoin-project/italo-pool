@@ -1,11 +1,11 @@
 {
-    "name": "cryptonote-freehaven-pool",
+    "name": "cryptonote-swap-pool",
     "version": "1.3.5",
     "license": "GPL-2.0",
-    "author": "IPBC.rocks",
+    "author": "swap-dev",
     "repository": {
         "type": "git",
-        "url": "https://github.com/LPHuynh/cryptonote-freehaven-pool.git"
+        "url": "https://github.com/swap-dev/cryptonote-swap-pool.git"
     },
     "dependencies": {
         "async": "1",
@@ -13,7 +13,7 @@
         "bignum": "*",
         "cli-color": "*",
         "cryptoforknote-util": "git://github.com/MoneroOcean/node-cryptoforknote-util.git",
-        "cryptonight-hashing": "git://github.com/freehavenprotocol/node-cryptonight-hashing.git",
+        "cryptonight-hashing": "git://github.com/swap-dev/node-cryptonight-hashing.git",
         "dateformat": "*",
         "mailgun.js": "*",
         "node-telegram-bot-api": "*",
