@@ -119,7 +119,7 @@
     "payments": {
         "enabled": true,
         "interval": 900,
-        "maxAddresses": 50,
+        "maxAddresses": 15,
         "mixin": 10,
         "priority": 1,
         "transferFee": 700000000,
