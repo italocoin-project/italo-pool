@@ -22,7 +22,7 @@
             </div>
             <div class="content">
                 <div class="text"><span tkey="paymentsMinimum">Minimum Payout</span></div>
-                <div class="value"><span id="paymentsMinimum">N/A</span></div>
+                <div class="value"><span id="paymentsMinimum">N/A</span> <span class="smallText">(<strong><span id="paymentsExchangeMinimum">N/A</span></strong> <span tkey="exchangeWallet">for integrated address</span>)</span></div>
             </div>
         </div>
     </div>
@@ -106,6 +106,7 @@ currentPage = {
         updateText('paymentsTotalPaid', lastStats.pool.totalMinersPaid.toString());
         updateText('paymentsInterval', getReadableTime(lastStats.config.paymentsInterval));
         updateText('paymentsMinimum', getReadableCoins(lastStats.config.minPaymentThreshold));
+        updateText('paymentsExchangeMinimum', getReadableCoinsFixedDecimal(lastStats.config.minPaymentExchangeThreshold, 1, true));
         updateText('paymentsDenomination', getReadableCoinsFixedDecimal(lastStats.config.denominationUnit));
         if (!lastStats.config.slushMiningEnabled)
             $('#slush_description').hide()
