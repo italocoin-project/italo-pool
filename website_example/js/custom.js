@@ -5,12 +5,12 @@ $(function(){
 
 	if (Cookies.get('night_mode') === '1')
 	{
-		changeCSS(themeCssDark, 4);
+		changeCSS(themeCssDark, 5);
 		$('.switch-checkbox').prop('checked', true);
 	}
 	else
 	{
-		changeCSS(themeCss, 4);
+		changeCSS(themeCss, 5);
 		$('.switch-checkbox').prop('checked', false);
 	}
 	$('.switch-checkbox').on('change', function() {
@@ -21,12 +21,12 @@ $(function(){
 function setNightMode(isSet){
 	if ($('.switch-checkbox:checked').val() === 'true') {
 		Cookies.set('night_mode', 1, {expires: 365});
-		changeCSS(themeCssDark, 4);
+		changeCSS(themeCssDark, 5);
 	}
 	else {
 		Cookies.set('night_mode', 0, {expires: 365});
-		changeCSS(themeCss, 4);
-	}	
+		changeCSS(themeCss, 5);
+	}
 }
 
 function changeCSS(cssFile, cssLinkIndex) {
