@@ -163,6 +163,10 @@
         "port": 19950
     },
 
+    "blockNotifier": {
+       "port": 14651
+    },
+
     "wallet": {
         "host": "127.0.0.1",
         "port": 18950
