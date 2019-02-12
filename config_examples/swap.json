@@ -8,9 +8,9 @@
     "coinDifficultyTarget": 15,
 
     "daemonType": "default",
-    "cnAlgorithm": "cryptonight_superfast",
+    "cnAlgorithm": "cuckaroo29s",
     "cnVariant": 0,
-    "cnBlobType": 0,
+    "cnBlobType": 7,
 
     "logging": {
         "files": {
@@ -26,7 +26,7 @@
 
     "poolServer": {
         "enabled": true,
-        "clusterForks": "auto",
+        "clusterForks": 2,
         "poolAddress": "fh..(YOUR POOL'S ADDRESS).....",
         "intAddressPrefix": 13671,
         "subAddressPrefix": 11368,
@@ -38,46 +38,46 @@
         "ports": [
             {
                 "port": 33011,
-                "difficulty": 2000,
+                "difficulty": 1,
                 "desc": "Very Low end hardware"
             },
             {
                 "port": 33022,
-                "difficulty": 10000,
+                "difficulty": 4,
                 "desc": "Low end hardware"
             },
             {
                 "port": 33033,
-                "difficulty": 50000,
+                "difficulty": 8,
                 "desc": "Mid range hardware"
             },
             {
                 "port": 33044,
-                "difficulty": 100000,
+                "difficulty": 16,
                 "desc": "High end hardware"
             },
             {
                 "port": 33055,
-                "difficulty": 500000,
+                "difficulty": 32,
                 "desc": "Very High end hardware"
             },
             {
                 "port": 33066,
-                "difficulty": 10000,
+                "difficulty": 4,
                 "desc": "SSL/Low end hardware",
-				"ssl": true
+                "ssl": true
             },
             {
                 "port": 33077,
-                "difficulty": 50000,
+                "difficulty": 8,
                 "desc": "SSL/Mid range hardware",
-				"ssl": true
+                "ssl": true
             },
             {
                 "port": 33088,
-                "difficulty": 100000,
+                "difficulty": 16,
                 "desc": "SSL/High end hardware",
-				"ssl": true
+                "ssl": true
             }
         ],
         "varDiff": {

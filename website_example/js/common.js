@@ -202,7 +202,7 @@ function getReadableHashRateString(hashrate){
     if (!hashrate) hashrate = 0;
 
     var i = 0;
-    var byteUnits = [' H', ' kH', ' MH', ' GH', ' TH', ' PH' ];
+    var byteUnits = [' G', ' kG', ' MG', ' GG', ' TG', ' PG' ];
     if (hashrate > 0) {
         while (hashrate > 1000){
             hashrate = hashrate / 1000;
