@@ -125,17 +125,15 @@
             <tr class="appConfig">
                 <td colspan="5">
                     <div class="collapse" id="swapreferenceminer">
-        
-<pre>"config.xml": [
-    {
-        ConnectionAddress: <span class="exampleHost">POOL_HOST</span>
-        ConnectionPort: <span class="examplePort">PORT</span>
-        login: <span class="exampleLogin">YOUR_WALLET_ADDRESS</span>
-        ssl: false, /* Set to true if you are using an SSL port */
-    },
-],
-"currency": "<span id="xmrstakAlgo"></span>",</pre>
 
+<pre>
+&lt;PrimaryConnection&gt;
+    &lt;ConnectionAddress&gt;<span class="exampleHost">POOL_HOST</span>&lt;/ConnectionAddress&gt;
+    &lt;ConnectionPort&gt;<span class="examplePort">PORT</span>&lt;/ConnectionPort&gt;
+    &lt;login&gt;<span class="exampleLogin">YOUR_WALLET_ADDRESS</span>&lt;/login&gt;
+    &lt;Password&gt;<span class="examplePassword">YOUR_WORKER_NAME</span>&lt;/Password&gt;
+    &lt;Ssl&gtfalse&lt;/Ssl&gt; /* Set to true if you are using an SSL port */
+&lt;/PrimaryConnection&gt;</pre>
                     </div>
                 </td>
             </tr>
