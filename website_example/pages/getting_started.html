@@ -107,18 +107,36 @@
             <tr>
                 <th><i class="fa fa-book"></i> <span tkey="appName">App Name</span></th>
                 <th><i class="fa fa-car"></i> <span tkey="appArch">Architecture</span></th>
-                <th><i class="fa fa-star"></i> <span tkey="appDesc">Features</span></th>
                 <th><i class="fa fa-download"></i> <span tkey="download">Download</span></th>
                 <th><i class="fa fa-file-code-o"></i> <span tkey="configuration">Configuration</span></th>
             </tr>
             </thead>
             <tbody id="miningApps_rows">
+        <!-- MiningRigRentals -->
+            <tr class="appInfo">
+                <td class="miningAppTitle">MiningRigRentals</td>
+                <td>Hash Rental</td>
+                <td><a class="btn btn-success" target="_blank" href="https://www.miningrigrentals.com/rigs/cuckoocycle29swap"><span tkey="Rental">Rental</span></a></td>
+                <td><a class="btn btn-default" role="button" data-toggle="collapse" href="#miningrigrentals" aria-expanded="true" aria-controls="collapseExample"><span tkey="showConfig">See more</span></a></td>
+            </tr>
+            <tr class="appConfig">
+                <td colspan="5">
+                    <div class="collapse" id="miningrigrentals">
+
+<pre>
+Type: Cuckaroo 29S (Swap)
+Host: <span class="exampleHost">POOL_HOST</span>:<span class="examplePort">PORT</span>
+Workername (-u): <span class="exampleLogin">YOUR_WALLET_ADDRESS</span>
+Password (-p): <span class="examplePassword">YOUR_WORKER_NAME</span>
+/* SSL ports are not supported */</pre>
+                    </div>
+                </td>
+            </tr>
         
         <!-- SwapReferenceMiner -->
             <tr class="appInfo">
                 <td class="miningAppTitle">SwapReferenceMiner</td>
                 <td>6GB+ GPU (AMD/NVIDIA)</td>
-                <td>Reference Miner for Swap 2.0</td>
                 <td><a class="btn btn-success" target="_blank" href="https://github.com/swap-dev/SwapReferenceMiner/releases/latest"><span tkey="download">Download</span></a></td>
                 <td><a class="btn btn-default" role="button" data-toggle="collapse" href="#swapreferenceminer" aria-expanded="true" aria-controls="collapseExample"><span tkey="showConfig">See more</span></a></td>
             </tr>
@@ -141,8 +159,7 @@
         <!-- GMiner -->
             <tr class="appInfo">
                 <td class="miningAppTitle">GMiner</td>
-                <td>6GB+ NVIDIA</td>
-                <td>High-performance Equihash/CuckooCycle miner for Nvidia GPUs.</td>
+                <td>6GB+ GPU (AMD/NVIDIA)</td>
                 <td><a class="btn btn-success" target="_blank" href="https://github.com/develsoftware/GMinerRelease/releases/latest"><span tkey="download">Download</span></a></td>
                 <td><a class="btn btn-default" role="button" data-toggle="collapse" href="#gminer" aria-expanded="true" aria-controls="collapseExample"><span tkey="showConfig">See more</span></a></td>
             </tr>
