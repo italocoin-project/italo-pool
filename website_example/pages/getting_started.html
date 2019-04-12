@@ -159,7 +159,7 @@ Password (-p): <span class="examplePassword">YOUR_WORKER_NAME</span>
         <!-- GMiner -->
             <tr class="appInfo">
                 <td class="miningAppTitle">GMiner</td>
-                <td>6GB+ GPU (AMD/NVIDIA)</td>
+                <td>4GB+ GPU (AMD/NVIDIA)</td>
                 <td><a class="btn btn-success" target="_blank" href="https://github.com/develsoftware/GMinerRelease/releases/latest"><span tkey="download">Download</span></a></td>
                 <td><a class="btn btn-default" role="button" data-toggle="collapse" href="#gminer" aria-expanded="true" aria-controls="collapseExample"><span tkey="showConfig">See more</span></a></td>
             </tr>
@@ -195,7 +195,24 @@ miner.exe --algo swap --server <span class="exampleHost">POOL_HOST</span> --port
 &lt;/PrimaryConnection&gt;</pre>
                     </div>
                 </td>
-            </tr>       
+            </tr>
+
+        <!-- NBMiner -->
+            <tr class="appInfo">
+                <td class="miningAppTitle">NBMiner</td>
+                <td>6GB+ GPU (AMD/NVIDIA)</td>
+                <td><a class="btn btn-success" target="_blank" href="https://github.com/NebuTech/NBMiner/releases"><span tkey="download">Download</span></a></td>
+                <td><a class="btn btn-default" role="button" data-toggle="collapse" href="#nbminer" aria-expanded="true" aria-controls="collapseExample"><span tkey="showConfig">See more</span></a></td>
+            </tr>
+            <tr class="appConfig">
+                <td colspan="5">
+                    <div class="collapse" id="nbminer">
+
+<pre>
+nbminer -a cuckaroo_swap -o stratum+tcp://<span class="exampleHost">POOL_HOST</span>:<span class="examplePort">PORT</span> -u <span class="exampleLogin">YOUR_WALLET_ADDRESS</span> -p <span class="examplePassword">YOUR_WORKER_NAME</span> -long-format -log</pre>
+                    </div>
+                </td>
+            </tr>
 <!-- Javascript -->
 <script>
 // Cleanup mining ports
