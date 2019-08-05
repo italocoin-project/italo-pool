@@ -67,7 +67,7 @@ Features
 * Prevent "transaction is too big" error with "payments.maxTransactionAmount" option
 * Option to enable dynamic transfer fee based on number of payees per transaction and option to have miner pay transfer fee instead of pool owner (applied to dynamic fee only)
 * Control transactions priority with config.payments.priority (default: 0).
-* Set payment ID on miner client when using "[address].[paymentID]" login
+* Set payment ID on miner client when using "[address]+[paymentID]" login
 * Integrated payment ID addresses support for Exchanges
 
 #### Admin panel
@@ -94,8 +94,8 @@ Features
 Community / Support
 ===
 
-* [GitHub Wiki](https://github.com/LPHuynh/cryptonote-swap-pool/wiki)
-* [GitHub Issues](https://github.com/LPHuynh/cryptonote-swap-pool/issues)
+* [GitHub Wiki](https://github.com/swap-dev/cryptonote-swap-pool/wiki)
+* [GitHub Issues](https://github.com/swap-dev/cryptonote-swap-pool/issues)
 * [Discord Group](https://discord.gg/XAmdwSd)
 
 Usage
@@ -139,13 +139,19 @@ To login with this user :
 sudo su - your-user
 ```
 
+##### Start Daemon and RPC Wallet
+```bash
+./swapd
+./swap-wallet-rpc --rpc-bind-port 18950 --disable-rpc-login --prompt-for-password --wallet-file pool
+```
+
 #### 1) Downloading & Installing
 
 
 Clone the repository and run `npm update` for all the dependencies to be installed:
 
 ```bash
-git clone https://github.com/LPHuynh/cryptonote-swap-pool.git pool
+git clone https://github.com/swap-dev/cryptonote-swap-pool.git pool
 cd pool
 
 npm update
@@ -158,22 +164,22 @@ Copy the `config_examples/COIN.json` file of your choice to `config.json` then o
 Explanation for each field:
 ```javascript
 /* Pool host displayed in notifications and front-end */
-"poolHost": "your.pool.host",
+"poolHost": "swap.example.com",
 
 /* Used for storage in redis so multiple coins can share the same redis instance. */
-"coin": "graft",
+"coin": "swap",
 
 /* Used for front-end display */
-"symbol": "GRFT",
+"symbol": "XWP",
 
 /* Minimum units in a single coin, see COIN constant in DAEMON_CODE/src/cryptonote_config.h */
-"coinUnits": 10000000000,
+"coinUnits": 1000000000000,
 
 /* Number of coin decimals places for notifications and front-end */
 "coinDecimalPlaces": 4,
   
 /* Coin network time to mine one block, see DIFFICULTY_TARGET constant in DAEMON_CODE/src/cryptonote_config.h */
-"coinDifficultyTarget": 120,
+"coinDifficultyTarget": 15,
 
 /* Set daemon type. Supported values: default, forknote (Fix block height + 1), bytecoin (ByteCoin Wallet RPC API) */
 "daemonType": "default",
@@ -183,9 +189,9 @@ Explanation for each field:
    Supported variants for "cryptonight": 0 (Original), 1 (Monero v7), 3 (Stellite / XTL)
    Supported variants for "cryptonight_light": 0 (Original), 1 (Aeon v7), 2 (IPBC)
    Supported blob types: 0 (Cryptonote), 1 (Forknote v1), 2 (Forknote v2), 3 (Cryptonote v2 / Masari) */
-"cnAlgorithm": "cryptonight",
-"cnVariant": 1,
-"cnBlobType": 0,
+"cnAlgorithm": "cuckaroo29s",
+"cnVariant": 0,
+"cnBlobType": 7,
 
 /* Logging */
 "logging": {
@@ -222,13 +228,14 @@ Explanation for each field:
     "clusterForks": "auto",
 
     /* Address where block rewards go, and miner payments come from. */
-    "poolAddress": "GBqRuitSoU3PFPBAkXMEnLdBRWXH4iDSD6RDxnQiEFjVJhWUi1UuqfV5EzosmaXgpPGE6JJQjMYhZZgWY8EJQn8jQTsuTit",
+    "poolAddress": "fh2jc6PbQYd4a5PY3ooPMZiPVniMy4MGcjSRBnoBVc1xLmdCHJ6hc98Ess2hpN2mDgPnCAXtDUUbmjWYutRvdoSr2Nps2o5wc",
 
-    /* This is the integrated address prefix used for miner login validation. */
-    "intAddressPrefix": 91,
+    /* This is the integrated/subaddress address prefix used for miner login validation. */
+    "intAddressPrefix": 13671,
+    "subAddressPrefix": 11368,
 
     /* Poll RPC daemons for new blocks every this many milliseconds. */
-    "blockRefreshInterval": 1000,
+    "blockRefreshInterval": 50,
 
     /* How many seconds until we consider a miner disconnected. */
     "minerTimeout": 900,
@@ -239,46 +246,57 @@ Explanation for each field:
     
     "ports": [
         {
-            "port": 3333, // Port for mining apps to connect to
-            "difficulty": 2000, // Initial difficulty miners are set to
-            "desc": "Low end hardware" // Description of port
+            "port": 33011,
+            "difficulty": 1,
+            "desc": "Very Low end hardware"
         },
         {
-            "port": 4444,
-            "difficulty": 15000,
+            "port": 33022,
+            "difficulty": 4,
+            "desc": "Low end hardware"
+        },
+        {
+            "port": 33033,
+            "difficulty": 8,
             "desc": "Mid range hardware"
         },
         {
-            "port": 5555,
-            "difficulty": 25000,
+            "port": 33044,
+            "difficulty": 16,
             "desc": "High end hardware"
         },
         {
-            "port": 7777,
-            "difficulty": 500000,
-            "desc": "Cloud-mining / NiceHash"
+            "port": 33055,
+            "difficulty": 32,
+            "desc": "Very High end hardware"
         },
         {
-            "port": 8888,
-            "difficulty": 25000,
-            "desc": "Hidden port",
-            "hidden": true // Hide this port in the front-end
+            "port": 33066,
+            "difficulty": 4,
+            "desc": "SSL/Low end hardware",
+            "ssl": true
         },
         {
-            "port": 9999,
-            "difficulty": 20000,
-            "desc": "SSL connection",
-            "ssl": true // Enable SSL
+            "port": 33077,
+            "difficulty": 8,
+            "desc": "SSL/Mid range hardware",
+            "ssl": true
+        },
+        {
+            "port": 33088,
+            "difficulty": 16,
+            "desc": "SSL/High end hardware",
+            "ssl": true
         }
     ],
 
-    /* Variable difficulty is a feature that will automatically adjust difficulty for
+/* Variable difficulty is a feature that will automatically adjust difficulty for
        individual miners based on their hashrate in order to lower networking and CPU
        overhead. */
-    "varDiff": {
-        "minDiff": 100, // Minimum difficulty
+        "varDiff": {
+        "minDiff": 1, // Minimum difficulty
         "maxDiff": 100000000,
-        "targetTime": 60, // Try to get 1 share per this many seconds
+        "targetTime": 15, // Try to get 1 share per this many seconds
         "retargetTime": 30, // Check to see if we should retarget every this many seconds
         "variancePercent": 30, // Allow time to vary this % from target without retargeting
         "maxJump": 100 // Limit diff percent increase/decrease in a single retargeting
@@ -287,18 +305,18 @@ Explanation for each field:
     /* Set difficulty on miner client side by passing <address> param with +<difficulty> postfix */
     "fixedDiff": {
         "enabled": true,
-        "separator": "+", // Character separator between <address> and <difficulty>
+        "separator": ".", // Character separator between <address> and <difficulty>
     },
 
     /* Set payment ID on miner client side by passing <address>.<paymentID> */
     "paymentId": {
-        "addressSeparator": "." // Character separator between <address> and <paymentID>
+        "addressSeparator": "+" // Character separator between <address> and <paymentID>
     },
 
     /* Feature to trust share difficulties from miners which can
        significantly reduce CPU load. */
     "shareTrust": {
-        "enabled": true,
+        "enabled": false,
         "min": 10, // Minimum percent probability for share hashing
         "stepDown": 3, // Increase trust probability % this much with each valid share
         "threshold": 10, // Amount of valid shares required before trusting begins
@@ -324,11 +342,11 @@ Explanation for each field:
 /* Module that sends payments to miners according to their submitted shares. */
 "payments": {
     "enabled": true,
-    "interval": 300, // How often to run in seconds
-    "maxAddresses": 50, // Split up payments if sending to more than this many addresses
-    "mixin": 5, // Number of transactions yours is indistinguishable from
+    "interval": 900, // How often to run in seconds
+    "maxAddresses": 15, // Split up payments if sending to more than this many addresses
+    "mixin": 10, // Number of transactions yours is indistinguishable from
     "priority": 0, // The transaction priority    
-    "transferFee": 4000000000, // Fee to pay for each transaction
+    "transferFee": 700000000, // Fee to pay for each transaction
     "dynamicTransferFee": true, // Enable dynamic transfer fee (fee is multiplied by number of miners)
     "minerPayFee" : true, // Miner pays the transfer fee instead of pool owner when using dynamic transfer fee
     "minPayment": 100000000000, // Miner balance required before sending payment
@@ -340,7 +358,7 @@ Explanation for each field:
 /* Module that monitors the submitted block maturities and manages rounds. Confirmed
    blocks mark the end of a round where workers' balances are increased in proportion
    to their shares. */
-"blockUnlocker": {
+    "blockUnlocker": {
     "enabled": true,
     "interval": 30, // How often to check block statuses in seconds
 
@@ -377,13 +395,13 @@ Explanation for each field:
 /* Coin daemon connection details (default port is 18981) */
 "daemon": {
     "host": "127.0.0.1",
-    "port": 18981
+    "port": 19950
 },
 
 /* Wallet daemon connection details (default port is 18980) */
 "wallet": {
     "host": "127.0.0.1",
-    "port": 18982
+    "port": 18950
 },
 
 /* Redis connection info (default port is 6379) */
@@ -575,9 +593,9 @@ This software contains four distinct modules:
 * `api` - Used by the website to display network, pool and miners' data
 * `unlocker` - Processes block candidates and increases miners' balances when blocks are unlocked
 * `payments` - Sends out payments to miners according to their balances stored in redis
+* `chartsDataCollector` - charting and graphs for pool and user
 
-
-By default, running the `init.js` script will start up all four modules. You can optionally have the script start
+By default, running the `init.js` script will start up all five modules. You can optionally have the script start
 only start a specific module by using the `-module=name` command argument, for example:
 
 ```bash
@@ -714,14 +732,14 @@ the Node.js modules, and any config files that may have been changed.
 ### JSON-RPC Commands from CLI
 
 Documentation for JSON-RPC commands can be found here:
-* Daemon https://wiki.bytecoin.org/wiki/JSON_RPC_API
-* Wallet https://wiki.bytecoin.org/wiki/Wallet_JSON_RPC_API
+* Daemon https://www.getmonero.org/resources/developer-guides/daemon-rpc.html
+* Wallet https://www.getmonero.org/resources/developer-guides/wallet-rpc.html
 
 
 Curl can be used to use the JSON-RPC commands from command-line. Here is an example of calling `getblockheaderbyheight` for block 100:
 
 ```bash
-curl 127.0.0.1:18081/json_rpc -d '{"method":"getblockheaderbyheight","params":{"height":100}}'
+curl 127.0.0.1:19950/json_rpc -d '{"method":"getblockheaderbyheight","params":{"height":100}}'
 ```
 
 
