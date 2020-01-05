@@ -10,7 +10,7 @@
     "daemonType": "default",
     "cnAlgorithm": "cuckaroo29s",
     "cnVariant": 0,
-    "cnBlobType": 7,
+    "cnBlobType": 8,
 
     "logging": {
         "files": {
