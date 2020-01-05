@@ -12,7 +12,7 @@
         "base58-native": "*",
         "bignum": "*",
         "cli-color": "*",
-        "cryptoforknote-util": "git://github.com/swap-dev/node-cryptoforknote-util.git",
+        "cryptoforknote-util": "git://github.com/MoneroOcean/node-cryptoforknote-util.git",
         "cuckaroo29s-hashing": "git://github.com/swap-dev/node-cuckaroo29s-hashing.git",
         "dateformat": "*",
         "mailgun.js": "*",
