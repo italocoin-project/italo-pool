@@ -13,7 +13,7 @@
         "bignum": "*",
         "cli-color": "*",
         "cryptoforknote-util": "git://github.com/MoneroOcean/node-cryptoforknote-util.git",
-        "cuckaroo29s-hashing": "git://github.com/swap-dev/node-cuckaroo29s-hashing.git",
+        "cuckaroo29i-hashing": "git://github.com/italocoin-project/node-cuckaroo29i-hashing.git",
         "dateformat": "*",
         "mailgun.js": "*",
         "node-telegram-bot-api": "*",

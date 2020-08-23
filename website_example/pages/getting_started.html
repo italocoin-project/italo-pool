@@ -6,7 +6,6 @@
             <div class="stats">
                 <div><i class="fa fa-cloud"></i> <span tkey="miningPoolHost">Mining Pool Address</span>: <i class="fas fa-globe-americas"></i>&nbsp;<span id="miningPoolHost"></span></div>
                 <div><i class="fa fa-cubes"></i> <span tkey="cnAlgorithm">Algorithm</span>: <span id="cnAlgorithm"></span></div>
-                <div><i class="fa fa-code-branch"></i> <span>XMR-Node-Proxy: </span><span>Supported</span></div>
             </div>
         </div>
 
@@ -14,7 +13,6 @@
         <div class="card padding-l-10 padding-r-10">
             <div class="stats">
                 <div><i class="fa fa-key"></i> <span tkey="usernameDesc">This is your wallet address</span></div>
-                <div id="paymentId"><i class="fa fa-compass"></i> <span tkey="paymentId">Exchange Payment ID</span>: <span>Depreciated</span></div>
                 <div id="fixedDiff"><i class="fa fa-wrench"></i> <span tkey="fixedDiff">Difficulty locking</span>: <span><u tkey="address">address</u><span id="fixedDiffSeparator">+</span><u tkey="addrDiff">diff</u></span></div>
                 <div><i class="fa fa-compress"></i> <span>Integrated Address: </span><span>Supported</span></div>
                 <div><i class="fa fa-exchange"></i> <span>Subaddress: </span><span>Supported</span></div>
@@ -59,40 +57,6 @@
 <!-- Mining Applications and Configuration Generator -->
 <h3><span tkey="miningApps">Mining Applications</span></h3>
 
-<!-- Configuration Generator -->
-<div class="card padding-15">
-    <p><span tkey="configGeneratorDesc">Generate your custom configuration to mine on our pool</span></p>
-    <div id="configGenerator" class="row">
-        <div class="col-md-12">
-            <div class="input-group push-down-5">
-                <span class="input-group-addon"><i class="fa fa-link"></i></span>
-                <select class="form-control" id="gMiningPort"></select>
-            </div>
-        </div>
-        <div class="col-sm-6 col-xs-12">
-            <div class="input-group push-down-5">
-                <span class="input-group-addon"><i class="fa fa-key"></i></span>
-                <input class="form-control" id="gAddress" type="text" tplaceholder="addressField" placeholder="Wallet Address" required="required" />
-            </div>
-        </div>
-        <div class="col-sm-6 col-xs-12">
-            <div class="input-group push-down-5">
-                <span class="input-group-addon"><i class="fa fa-server"></i></span>
-                <input class="form-control" id="gWorkerName" tplaceholder="workerNameField" type="text" placeholder="Worker_Name" /> 
-            </div>
-        </div>
-        <div class="col-sm-6 col-xs-12">
-            <div class="input-group push-down-5">
-                <span class="input-group-addon"><i class="fa fa-wrench"></i></span>
-                <input class="form-control" id="gDifficulty" type="text" tplaceholder="fixedDiffField" placeholder="Fixed difficulty (optional)" />
-            </div>
-        </div>
-        <div class="col-md-12 push-up-5">
-            <input id="generateConf" type="submit" tvalue="generateConfig" value="Generate configuration" class="btn btn-default"  data-toggle="collapse" href="#xmrstak" />
-        </div>
-    </div>
-</div>
-
 <!-- Mining Applications -->
 <div class="card push-up-5">
     <div id="miningApps" class="table-responsive">
@@ -106,37 +70,16 @@
             </tr>
             </thead>
             <tbody id="miningApps_rows">
-        <!-- MiningRigRentals -->
-            <tr class="appInfo">
-                <td class="miningAppTitle">MiningRigRentals</td>
-                <td>Hash Rental</td>
-                <td><a class="btn btn-success" target="_blank" href="https://www.miningrigrentals.com/rigs/cuckoocycle29swap"><span tkey="Rental">Rental</span></a></td>
-                <td><a class="btn btn-default" role="button" data-toggle="collapse" href="#miningrigrentals" aria-expanded="true" aria-controls="collapseExample"><span tkey="showConfig">See more</span></a></td>
-            </tr>
-            <tr class="appConfig">
-                <td colspan="5">
-                    <div class="collapse" id="miningrigrentals">
-
-<pre>
-Type: Cuckaroo 29S (Swap)
-Host: <span class="exampleHost">POOL_HOST</span>:<span class="examplePort">PORT</span>
-Workername (-u): <span class="exampleLogin">YOUR_WALLET_ADDRESS</span>
-Password (-p): <span class="examplePassword">YOUR_WORKER_NAME</span>
-/* SSL ports are not supported */</pre>
-                    </div>
-                </td>
-            </tr>
-        
         <!-- SwapReferenceMiner -->
             <tr class="appInfo">
-                <td class="miningAppTitle">SwapReferenceMiner</td>
+                <td class="miningAppTitle">ItaloReferenceMiner</td>
                 <td>6GB+ GPU (AMD/NVIDIA)</td>
-                <td><a class="btn btn-success" target="_blank" href="https://github.com/swap-dev/SwapReferenceMiner/releases/latest"><span tkey="download">Download</span></a></td>
-                <td><a class="btn btn-default" role="button" data-toggle="collapse" href="#swapreferenceminer" aria-expanded="true" aria-controls="collapseExample"><span tkey="showConfig">See more</span></a></td>
+                <td><a class="btn btn-success" target="_blank" href="https://github.com/italocoin-project/ItaloReferenceMiner"><span tkey="download">Download</span></a></td>
+                <td><a class="btn btn-default" role="button" data-toggle="collapse" href="#italoreferenceminer" aria-expanded="true" aria-controls="collapseExample"><span tkey="showConfig">See more</span></a></td>
             </tr>
             <tr class="appConfig">
                 <td colspan="5">
-                    <div class="collapse" id="swapreferenceminer">
+                    <div class="collapse" id="italoreferenceminer">
 
 <pre>
 &lt;PrimaryConnection&gt;
@@ -150,63 +93,6 @@ Password (-p): <span class="examplePassword">YOUR_WORKER_NAME</span>
                 </td>
             </tr>
 
-        <!-- GMiner -->
-            <tr class="appInfo">
-                <td class="miningAppTitle">GMiner</td>
-                <td>4GB+ GPU (AMD/NVIDIA)</td>
-                <td><a class="btn btn-success" target="_blank" href="https://github.com/develsoftware/GMinerRelease/releases/latest"><span tkey="download">Download</span></a></td>
-                <td><a class="btn btn-default" role="button" data-toggle="collapse" href="#gminer" aria-expanded="true" aria-controls="collapseExample"><span tkey="showConfig">See more</span></a></td>
-            </tr>
-            <tr class="appConfig">
-                <td colspan="5">
-                    <div class="collapse" id="gminer">
-                    
-<pre>
-miner.exe --algo swap --server <span class="exampleHost">POOL_HOST</span> --port <span class="examplePort">PORT</span> --user <span class="exampleLogin">YOUR_WALLET_ADDRESS</span> --pass <span class="examplePassword">YOUR_WORKER_NAME</span>
-</pre>
-                    </div>
-                </td>
-            </tr>
-
-        <!-- GrinPro Miner-->
-            <tr class="appInfo">
-                <td class="miningAppTitle">GrinPro Miner</td>
-                <td>6GB+ GPU (AMD/NVIDIA)</td>
-                <td><a class="btn btn-success" target="_blank" href="https://github.com/mozkomor/GrinProMiner/releases/latest"><span tkey="download">Download</span></a></td>
-                <td><a class="btn btn-default" role="button" data-toggle="collapse" href="#grinprominer" aria-expanded="true" aria-controls="collapseExample"><span tkey="showConfig">See more</span></a></td>
-            </tr>
-            <tr class="appConfig">
-                <td colspan="5">
-                    <div class="collapse" id="grinprominer">
-
-<pre>
-&lt;PrimaryConnection&gt;
-    &lt;ConnectionAddress&gt;<span class="exampleHost">POOL_HOST</span>&lt;/ConnectionAddress&gt;
-    &lt;ConnectionPort&gt;<span class="examplePort">PORT</span>&lt;/ConnectionPort&gt;
-    &lt;login&gt;<span class="exampleLogin">YOUR_WALLET_ADDRESS</span>&lt;/login&gt;
-    &lt;Password&gt;<span class="examplePassword">YOUR_WORKER_NAME</span>&lt;/Password&gt;
-    &lt;Ssl&gtfalse&lt;/Ssl&gt; /* Set to true if you are using an SSL port */
-&lt;/PrimaryConnection&gt;</pre>
-                    </div>
-                </td>
-            </tr>
-
-        <!-- NBMiner -->
-            <tr class="appInfo">
-                <td class="miningAppTitle">NBMiner</td>
-                <td>5GB+ NVIDIA</td>
-                <td><a class="btn btn-success" target="_blank" href="https://github.com/NebuTech/NBMiner/releases"><span tkey="download">Download</span></a></td>
-                <td><a class="btn btn-default" role="button" data-toggle="collapse" href="#nbminer" aria-expanded="true" aria-controls="collapseExample"><span tkey="showConfig">See more</span></a></td>
-            </tr>
-            <tr class="appConfig">
-                <td colspan="5">
-                    <div class="collapse" id="nbminer">
-
-<pre>
-nbminer -a cuckaroo_swap -o stratum+tcp://<span class="exampleHost">POOL_HOST</span>:<span class="examplePort">PORT</span> -u <span class="exampleLogin">YOUR_WALLET_ADDRESS</span>:<span class="examplePassword">YOUR_WORKER_NAME</span> -long-format -log</pre>
-                    </div>
-                </td>
-            </tr>
 <!-- Javascript -->
 <script>
 // Cleanup mining ports
@@ -244,104 +130,30 @@ currentPage = {
 
         updateText('miningPoolHost', getPoolHost());
         updateTextClasses('exampleHost', getPoolHost());
-        updateText('paymentIdSeparator', lastStats.config.paymentIdSeparator);
         updateText('fixedDiffSeparator', lastStats.config.fixedDiffSeparator);
         if (!lastStats.config.fixedDiffEnabled) $('#fixedDiff').hide();
 
         var coin = lastStats.config.coin.toLowerCase() || null;
-        var cnAlgorithm = lastStats.config.cnAlgorithm || "cryptonight";
+        var cnAlgorithm = lastStats.config.cnAlgorithm || "cuckaroo29b";
         var cnVariant = lastStats.config.cnVariant || 0;
 
         algorithm = '';
-        xmrstakAlgo = '';
 
-        if (cnAlgorithm == "freehaven" || cnAlgorithm == "cryptonight_superfast")
-        {
-            algorithm = 'Cryptonight-Superfast (AKA CN-FreeHaven)';
-            xmrstakAlgo = 'cryptonight_superfast';
+        if (cnAlgorithm == "cuckaroo29s") {
+            algorithm = 'Cuckaroo29S';
         }
-        else if (cnAlgorithm == "cuckaroo29s") {
-            algorithm = 'Cuckaroo29S (Swap)';
-            xmrstakAlgo = '';
+        else if (cnAlgorithm == "cuckaroo29b") {
+            algorithm = 'Cuckaroo29B';
         }
-        else if (cnAlgorithm == "cryptonight_light") {
-            if (cnVariant === 1) {
-                algorithm = 'Cryptonight Light (Aeon v7)';
-                xmrstakAlgo = 'cryptonight_lite_v7';
-            } else if (cnVariant === 2) {
-                algorithm = 'Cryptonight Light (IPBC)';
-                xmrstakAlgo = 'cryptonight_lite_v7_xor';
-            } else {
-                algorithm = 'Cryptonight Light (Original)';
-                xmrstakAlgo = 'cryptonight_lite';
-            }
+        else if ((cnAlgorithm == "cuckaroo29v")||(cnAlgorithm == "cuckarood29v")) {
+            algorithm = 'Cuckarood29V';
         }
-        else if (cnAlgorithm == "cryptonight_heavy") {
-            algorithm = 'Cryptonight Heavy';
-            xmrstakAlgo = 'cryptonight_heavy';
+        else{
+            algorithm = cnAlgorithm;
         }
-        else {
-            if (cnVariant === 1) {
-                algorithm = 'Cryptonight (Monero v7)';
-                xmrstakAlgo = 'cryptonight_v7';
-            } else if (cnVariant === 3) {
-                algorithm = 'Cryptonight (Stellite v7)';
-                xmrstakAlgo = 'cryptonight_v7_stellite';
-        } else if (cnVariant === 4) {
-                algorithm = 'Cryptonight Fast (Masari)';
-                xmrstakAlgo = 'cryptonight_masari';
-            } else {
-                algorithm = 'Cryptonight (Original)';
-                xmrstakAlgo = 'cryptonight';
-            }
-        }
-
-        /*
-        if (coin == 'aeon') xmrstakAlgo = 'aeon7';
-        if (coin == 'bbscoin') xmrstakAlgo = 'bbscoin';
-        if (coin == 'croat') xmrstakAlgo = 'croat';
-        if (coin == 'edollar') xmrstakAlgo = 'edollar';
-        if (coin == 'electroneum') xmrstakAlgo = 'electroneum';
-        if (coin == 'graft') xmrstakAlgo = 'graft';
-        if (coin == 'haven') xmrstakAlgo = 'haven';
-        if (coin == 'intense') xmrstakAlgo = 'intense';
-        if (coin == 'ipbc') xmrstakAlgo = 'ipbc';
-        if (coin == 'karbo') xmrstakAlgo = 'karbo';
-        if (coin == 'masari') xmrstakAlgo = 'masari';
-        if (coin == 'monero') xmrstakAlgo = 'monero7';
-        if (coin == 'stellite') xmrstakAlgo = 'stellite';
-        if (coin == 'sumokoin') xmrstakAlgo = 'sumokoin';
-        if (coin == 'turtlecoin') xmrstakAlgo = 'turtlecoin';
-        */
 
         updateText('cnAlgorithm', algorithm);
-        updateText('xmrstakAlgo', xmrstakAlgo);
     }
 };
 
-/**
- * Configuration generator
- **/
-
-$('#generateConf').click(function() {
-    // Mining Port
-    var port = $('#gMiningPort').val();
-    updateTextClasses('examplePort', port);
-
-    // Username
-    var address = $('#gAddress').val().replace(/\s+/g, '').trim();
-    var paymentID = $('#gPaymentID').val().replace(/\s+/g, '').trim();
-    var difficulty = parseInt($('#gDifficulty').val().replace(/\s+/g, '').trim());
-    
-    var login = address ? address : 'YOUR_WALLET_ADDRESS';
-    if (paymentID) login = login + lastStats.config.paymentIdSeparator + paymentID;
-    if (difficulty) login = login + lastStats.config.fixedDiffSeparator + difficulty;
-    updateTextClasses('exampleLogin', login);
-
-    // Password
-    var workerName = $('#gWorkerName').val().replace(/\s+/g, '').trim();
-
-    var password = workerName ? workerName : 'x';
-    updateTextClasses('examplePassword', password);    
-});
 </script>

@@ -1,16 +1,17 @@
-var api = "https://swap.example.com:8119";
+var api = "https://pool.italo.network:8119";
 
-var coinDecimalPlaces = 8;
+var coinDecimalPlaces = 2;
 
-var email = "";
-var telegram = "";
-var discord = "https://discord.gg/XAmdwSd";
+var email = "info@italo.network";
+var telegram = "https://t.me/italonetwork";
+var discord = "https://discord.gg/thUzmtm";
 
 var marketCurrencies = ["{symbol}-BTC"];
 
-var blockchainExplorer = "https://explorer.xwp.one/block/{id}";
-var transactionExplorer = "https://explorer.xwp.one/tx/{id}";
+var blockchainExplorer = "https://explorer.italo.network/block/{id}";
 
-var themeCss = "themes/moon_gray.css";
-var themeCssDark = "themes/moon_gray_dark.css";
+var transactionExplorer = "https://explorer.italo.network/tx/{id}";
+
+var themeCss = "themes/light.css";
+var themeCssDark = "themes/dark.css";
 var defaultLang = 'en';

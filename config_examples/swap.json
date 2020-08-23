@@ -8,7 +8,7 @@
     "coinDifficultyTarget": 15,
 
     "daemonType": "default",
-    "cnAlgorithm": "cuckaroo29s",
+    "cnAlgorithm": "cuckaroo29i",
     "cnVariant": 0,
     "cnBlobType": 8,
 

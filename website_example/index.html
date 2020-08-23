@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
 
-    <title>Swap Mining Pool</title>
+    <title>ITALO (XTA) - Mining Pool - italocoin</title>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.6.3/jquery.timeago.min.js"></script>
@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
-    <link rel="icon" type="image/png" href="icon-32.png">
+    <link rel="icon" type="image/png" href="img/small.png">
     <link href="themes/custom.css" rel="stylesheet">
 </head>
 <body>
@@ -23,7 +23,7 @@
 
     <!-- Navigation -->
     <div class="nav-side-menu">
-        <div class="brand"><a href="/"><span id="coinSymbol"></span> <span tkey="miningPool">Mining Pool</span></a></div>
+        <div class="brand"><a href="/"><img src="/img/396xwhite.png" alt="pool.italo.network" style="margin-left:10px;max-width:160px;padding-right:5px"></a></div>
         <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>  
         <div class="menu-list">
             <ul id="menu-content" class="menu-content collapsed out">
@@ -58,10 +58,6 @@
 
                 <li><a class="hot_link" data-page="settings.html" href="#settings">
                     <i class="fa fa-gears"></i> <span tkey="settings">Settings</span>
-                </a></li>
-
-                <li><a class="hot_link" data-page="wallet.html" href="#wallet">
-                    <i class="fa fa-address-card"></i> <span tkey="paperwallet">Paper Wallet</span>
                 </a></li>
 				
                 <li><a class="hot_link" data-page="faq.html" href="#faq">
@@ -135,7 +131,7 @@ function updateLiveStats(data) {
 // Update global informations
 function updateIndex(){
     updateText('coinSymbol', lastStats.config.symbol);
-    updateText('g_networkHashrate', getReadableHashRateString(lastStats.network.difficulty / lastStats.config.coinDifficultyTarget * 32) + '/sec');
+    updateText('g_networkHashrate', getReadableHashRateString(lastStats.network.difficulty / lastStats.config.coinDifficultyTarget * 48) + '/sec');
     updateText('g_poolHashrate', getReadableHashRateString(lastStats.pool.hashrate) + '/sec');    
     if (lastStats.miner && lastStats.miner.hashrate){
          updateText('g_userHashrate', getReadableHashRateString(lastStats.miner.hashrate) + '/sec');
