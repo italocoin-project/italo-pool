@@ -1,7 +1,7 @@
-cryptonote-swap-pool
+cryptonote-italo-pool
 ======================
 
-High performance Node.js (with native C addons) mining pool for swap.
+High performance Node.js (with native C addons) mining pool for italo.
 
 
 #### Table of Contents
@@ -94,8 +94,8 @@ Features
 Community / Support
 ===
 
-* [GitHub Wiki](https://github.com/swap-dev/cryptonote-swap-pool/wiki)
-* [GitHub Issues](https://github.com/swap-dev/cryptonote-swap-pool/issues)
+* [GitHub Wiki](https://github.com/italocoin-project/italo-pool/wiki)
+* [GitHub Issues](https://github.com/italocoin-project/italo-pool/issues)
 * [Discord Group](https://discord.gg/XAmdwSd)
 
 Usage
@@ -141,8 +141,8 @@ sudo su - your-user
 
 ##### Start Daemon and RPC Wallet
 ```bash
-./swapd
-./swap-wallet-rpc --rpc-bind-port 18950 --disable-rpc-login --prompt-for-password --wallet-file pool
+./italod
+./italo-wallet-rpc --rpc-bind-port 13102 --disable-rpc-login --prompt-for-password --wallet-file pool
 ```
 
 #### 1) Downloading & Installing
@@ -151,7 +151,7 @@ sudo su - your-user
 Clone the repository and run `npm update` for all the dependencies to be installed:
 
 ```bash
-git clone https://github.com/swap-dev/cryptonote-swap-pool.git pool
+git clone https://github.com/italocoin-project/italo-pool.git pool
 cd pool
 
 npm update
@@ -164,10 +164,10 @@ Copy the `config_examples/COIN.json` file of your choice to `config.json` then o
 Explanation for each field:
 ```javascript
 /* Pool host displayed in notifications and front-end */
-"poolHost": "swap.example.com",
+"poolHost": "italo.example.com",
 
 /* Used for storage in redis so multiple coins can share the same redis instance. */
-"coin": "swap",
+"coin": "italo",
 
 /* Used for front-end display */
 "symbol": "XWP",
@@ -401,7 +401,7 @@ Explanation for each field:
 /* Wallet daemon connection details (default port is 18980) */
 "wallet": {
     "host": "127.0.0.1",
-    "port": 18950
+    "port": 13102
 },
 
 /* Redis connection info (default port is 6379) */
